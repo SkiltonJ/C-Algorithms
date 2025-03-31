@@ -13,6 +13,7 @@ This repository serves as:
 * **A learning journal:** Documenting my progress as I explore and implement different algorithms.
 * **A practice ground:** Providing hands-on experience in translating theoretical concepts into working C code.
 * **A personal reference:** Creating a collection of well-understood and implemented algorithms for future use.
+* * **Reinforcement through Repetition:** This repository reflects my belief that consistent practice is key to mastery. You may observe multiple implementations of the same algorithm, which is a deliberate strategy to solidify my understanding through iterative application.
 
 ## Current Algorithms Implemented
 

@@ -61,6 +61,27 @@ int max_subarray_sum(int *arr, int n, int k)
 	}
 	return max_sum;
 }
+
+int max_subarray_sum(int *arr, int n, int k)
+{
+	if (n < k)
+		return -1;
+	int current_sum = 0;
+	int max_sum = 0;
+	int i = 0;
+	
+	while (i < k)
+		current_sum += arr[i++];
+	max_sum = current_sum;
+	i = k;
+	while (i < n)
+	{
+		current_sum += arr[i] - arr[i - k];
+		if (current_sum > max_sum)
+			max_sum = current_sum;
+	}
+	return max_sum;
+}
 /* Variable Sliding Window */
 
 

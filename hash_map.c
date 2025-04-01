@@ -92,3 +92,26 @@ void    freeHashMap(HashMap *map)
     free(map->items);
     free(map);
 }
+
+typedef struct
+{
+	char *key;
+	void *value;
+} KeyValuePair;
+
+typedef struct
+{
+	int capacity;
+	int size;
+	KeyValuePair** items;
+} HashMap;
+
+unsigned int	hash(char *key, int capacity)
+{
+	unsigned long	hash = 5381;
+	int c;
+
+	while ((c = *key++))
+		hash = ((hash << 5) + hash) + c;
+	return (hash % capacity);
+}

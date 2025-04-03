@@ -231,3 +231,75 @@ HashMap *createHashMap(int capcity) {
 	}
 	return map;
 }
+
+void insertHashMap(HashMap *map, char *key, void *value) {
+	if (map == NULL || key == NULL)
+		return;
+	unsigned int index = hash(key, map->capacity);
+	while (map->items[index] != NULL) {
+		if (strcmp(map->items[index]->key, key) == 0) {
+			map->items[index]->value = value;
+			return;
+		}
+		index = (index + 1) % map->capacity;
+	}
+	KeyValuePair *item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+	if (item == NULL)
+		return;
+	item->key = strdup(key);
+	if (item->key == NULL) {
+		free(item);
+		return;
+	}
+	item->value = value;
+	map->items[index] = item;
+	map->size++;
+}
+
+void insertHashMap(HashMap *map, char *key, void *value) {
+	if (map == NULL || key == NULL)
+		return;
+	unsigned int index = hash(key, map->capacity);
+	while (map->items[index] != NULL) {
+		if (strcmp(map->items[index]->key, key) == 0) {
+			map->items[index]->value = value;
+			return;
+		}
+		index = (index + 1) % map->capacity;
+	}
+	KeyValuePair *item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+	if (item == NULL)
+		return;
+	item->key = strdup(key);
+	if (item->key == NULL) {
+		free(item);
+		return;
+	}
+	item->value = value;
+	map->items[index] = item;
+	map->size++;
+}
+
+void insertHashMap(HashMap *map, char *key, void *value) {
+	if (map == NULL || key == NULL)
+		return;
+	unsigned int index = hash(key, map->capacity);
+	while (map->items[index] != NULL) {
+		if (strcmp(map->items[index]->key, key) == 0) {
+			map->items[index]->value = value;
+			return;
+		}
+		index = (index + 1) % map->capacity;
+	}
+	KeyValuePair *item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+	if (item == NULL)
+		return;
+	item->key = strdup(key);
+	if (item->key == NULL) {
+		free(item);
+		return;
+	}
+	item->value = value;
+	map->items[index] = item;
+	map->size++;
+}

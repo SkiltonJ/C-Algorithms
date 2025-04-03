@@ -161,3 +161,73 @@ unsigned int hash(char *key, int capacity) {
 		hash = ((hash << 5) + hash) + c;
 	return hash % capacity;
 }
+
+HashMap *createHashMap(int capacity) {
+	HashMap *map = (HashMap*)malloc(sizeof(HashMap));
+	if (map == NULL)
+		return NULL;
+	map->capacity = capacity;
+	map->size = 0;
+	map->items = (KeyValuePair**)calloc(capacity, sizeof(KeyValuePair*));
+	if (map->items == NULL) {
+		free(map);
+		return NULL;
+	}
+	return map;
+}
+
+HashMap *createHashMap(int capacity) {
+	HashMap *map = (HashMap*)malloc(sizeof(HashMap));
+	if (map == NULL)
+		return NULL;
+	map->capacity = capacity;
+	map->size = 0;
+	map->items = (KeyValuePair**)calloc(capacity, sizeof(KeyValuePair*));
+	if (map->items == NULL) {
+		free(map);
+		return NULL;
+	}
+	return map;
+}
+
+HashMap *createHashMap(int capacity) {
+	HashMap *map = (HashMap*)malloc(sizeof(HashMap));
+	if (map == NULL)
+		return NULL;
+	map->capacity = capacity;
+	map->size = 0;
+	map->items = (KeyValuePair**)calloc(capacity, sizeof(KeyValuePair*));
+	if (map->items == NULL) {
+		free(map);
+		return NULL;
+	}
+	return map;
+}
+
+HashMap *createHashMap(int capacity) {
+	HashMap *map = (HashMap*)malloc(sizeof(HashMap));
+	if (map == NULL)
+		return NULL;
+	map->capacity = capacity;
+	map->size = 0;
+	map->items = (KeyValuePair**)calloc(capacity, sizeof(KeyValuePair*));
+	if (map->items == NULL) {
+		free(map);
+		return NULL;
+	}
+	return map;
+}
+
+HashMap *createHashMap(int capcity) {
+	HashMap *map = (HashMap*)malloc(sizeof(HashMap));
+	if (map == NULL)
+		return NULL;
+	map->capacity = capcaity;
+	map->size = 0;
+	map->items = (KeyValuePair**)calloc(capacity, sizeof(KeyValuePair*));
+	if (map->items == NULL) {
+		free(map);
+		return NULL;
+	}
+	return map;
+}

@@ -95,6 +95,13 @@ void freeHashMap(HashMap *map) {
 
 /* Hashmap Practice */
 
+1. typedef
+2. hash function
+3. createHashMap
+4. insertHashMap
+5. getHashMap
+6. freeHashMap
+
 typedef struct {
 	char *key;
 	void *value;
@@ -106,30 +113,24 @@ typedef struct {
 	KeyValuePair **items;
 } HashMap;
 
-unsigned int hash(char *key, int capacity)
-{
-	unsigned long hash = 5381;
-	int c;
+typedef struct {
+	char *key;
+	void *value;
+} KeyValuePair;
 
-	while ((c = *key++))
-		hash = ((hash << 5) + hash) + c;
-	return hash % capacity;
-}
+typedef struct {
+	int capacity;
+	int size;
+	KeyValuePair **items;
+} HashMap;
 
-HashMap *createHashMap(int capacity)
-{
-	HashMap *map = (HashMap*)malloc(sizeof(HashMap));
-	if (map == NULL)
-		return NULL;
-	map->capacity = capacity;
-	map->size = 0;
-	map->items = (KeyValuePair**)calloc(capacity, sizeof(KeyValuePair *));
-	if (map->items == NULL) {
-		free(map);
-		return NULL;
-	}
-	return map;
-}
+typedef struct {
+	char *key;
+	void *value;
+} KeyValuePair;
 
-
-
+typedef struct {
+	int capacity;
+	int size;
+	KeyValuePair **items;
+} HashMap;
